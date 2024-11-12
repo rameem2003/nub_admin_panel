@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import MainLayout from './components/MainLayout/MainLayout';
 import Dashboard from './components/Dashboard/Dashboard';
+import Students from './components/Students/Students';
+import Teachers from './components/Teachers/Teachers';
 
 
 const router = createBrowserRouter([
@@ -17,7 +19,17 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Dashboard></Dashboard>,
-      }
+      },
+      {
+        path: "/students",
+        element: <Students></Students>,
+        loader : ()=> fetch('/studentsData.json')
+      },
+      {
+        path: "/teachers",
+        element: <Teachers></Teachers>,
+        loader : ()=> fetch('/teachersData.json')
+      },
     ]
   },
 ]);

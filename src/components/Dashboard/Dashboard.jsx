@@ -2,14 +2,12 @@ import { GiTeacher } from "react-icons/gi";
 import { IoNotifications } from "react-icons/io5";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { PiStudentFill } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
 export default function Dashboard() {
   return (
     <div className="">
-      <div className="flex items-center justify-between text-xl font-bold px-8 py-5 bg-gray-300">
-        <h1>Welcome To NUBian!</h1>
-        <h1>Dashboard</h1>
-      </div>
+      
       <div className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-5 p-5">
         <div className="bg-blue-400 rounded-lg">
           <div className="m-3 flex flex-col items-center">
@@ -40,6 +38,37 @@ export default function Dashboard() {
           </div>
         </div>
         
+      </div>
+      <div className="bg-white py-6  mx-5 rounded-2xl">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">Recent Annoucement</h1>
+        </div>
+        <div className="mt-5">
+            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between px-5">
+                <div className="">
+                    <h1 className=" font-bold">Mathemetics assignment</h1>
+                    <p className="text-sm text-gray-700">Published date: 20-november-2024</p>
+                </div>
+                <div className="">
+                  <NavLink>
+                    <button className=" px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">View Details</button>
+                  </NavLink>
+                </div>
+            </div>
+        </div>
+        <div className="mt-5">
+            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between px-5">
+                <div className="">
+                    <h1 className=" font-bold">Mathemetics assignment</h1>
+                    <p className="text-sm text-gray-700">Published date: 20-november-2024</p>
+                </div>
+                <div className="">
+                  <NavLink>
+                    <button className=" px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">View Details</button>
+                  </NavLink>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   )

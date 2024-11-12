@@ -1,23 +1,25 @@
 import { Outlet } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 
 export default function MainLayout() {
   return (
-    <div className="max-w-screen-lg mx-auto bg-gray-100 h-screen">
-        <div className="flex ">
-            <div className="sticky top-0 z-0 w-2/12 ">
-                <SideBar></SideBar>
-            </div>
-            <div className="w-10/12">
-                <Outlet></Outlet>
-            </div>
-            
+    <div className="max-w-screen-lg mx-auto bg-gray-100 h-screen flex flex-col">
+      <div className="flex flex-grow overflow-hidden">
+        <div className="sticky top-0 z-0 w-2/12 hidden md:block">
+          <SideBar />
         </div>
-        <div className="-mt-14">
-              <Footer></Footer>
+        <div className="w-full md:w-10/12 flex flex-col">
+          <div className="sticky top-0 z-10">
+            <Navbar />
+          </div>
+          <div className="flex-grow overflow-auto">
+            <Outlet />
+          </div>
         </div>
-        
+      </div>
+      <Footer /> 
     </div>
-  )
+  );
 }
