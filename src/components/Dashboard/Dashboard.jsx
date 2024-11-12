@@ -44,7 +44,7 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold">Recent Annoucement</h1>
         </div>
         <div className="mt-5">
-            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between px-5">
+            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3  flex items-center justify-between mx-5 px-2">
                 <div className="">
                     <h1 className=" font-bold">Mathemetics assignment</h1>
                     <p className="text-sm text-gray-700">Published date: 20-november-2024</p>
@@ -57,7 +57,7 @@ export default function Dashboard() {
             </div>
         </div>
         <div className="mt-5">
-            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between px-5">
+            <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between mx-5 px-2">
                 <div className="">
                     <h1 className=" font-bold">Mathemetics assignment</h1>
                     <p className="text-sm text-gray-700">Published date: 20-november-2024</p>

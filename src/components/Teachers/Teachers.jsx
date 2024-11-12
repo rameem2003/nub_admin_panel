@@ -1,17 +1,18 @@
 import { NavLink, useLoaderData } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
-export default function Students() {
+
+export default function Teachers() {
   const teachersData = useLoaderData();
   console.log(teachersData);
 
   return (
     <div>
-      <div className="">
-        <div className="flex items-center justify-between navbar bg-base-100 md:px-5">
+      <div>
+        <div className="flex items-center justify-between navbar bg-base-100 px-4 py-2 md:px-5 md:py-3">
           <div className="">
             <h1 className="text-xl font-bold">Teachers Info</h1>
           </div>
-          <label className="input input-bordered input-secondary flex items-center gap-2">
+          <label className="input input-bordered input-secondary flex items-center gap-2 mx-2 text-sm">
             <input type="text" className="grow" placeholder="Search By Id" />
             <button>
               <svg
@@ -29,31 +30,31 @@ export default function Students() {
             </button>
           </label>
           <div>
-            <NavLink className={`flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl`}>
-                <MdPersonAddAlt1 className="text-xl"></MdPersonAddAlt1>
-                <button className="text-xs font-bold">Add Teacher</button>
+            <NavLink className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl">
+              <MdPersonAddAlt1 className="text-xl" />
+              <button className="text-xs font-bold">Add Teacher</button>
             </NavLink>
           </div>
         </div>
-        
-        <div className="mt-5 h-[60vh] overflow-y-auto"> {/* Fixed height and scrolling */}
+
+        <div className="mt-5 h-[60vh] overflow-y-auto">
           {teachersData.map((teacher) => (
             <div key={teacher.id} className="mt-5">
-              <div className="bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between px-5">
+              <div className="bg-blue-200 mx-4 sm:mx-6 md:mx-10 rounded-xl py-3 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-5">
                 <div>
                   <img
-                    className="rounded-full w-10 h-10"
-                    alt="Student Avatar"
+                    className="rounded-full w-12 h-12 sm:w-10 sm:h-10"
+                    alt="Teacher Avatar"
                     src={teacher.image}
                   />
                 </div>
-                <div>
+                <div className="text-center sm:text-left mt-3 sm:mt-0">
                   <h1 className="font-bold">{teacher.name}</h1>
-                  <p className="text-sm text-gray-700">Subject: {teacher.stdId}</p>
+                  <p className="text-sm text-gray-700">Subject: {teacher.subject}</p> {/* Ensure subject property is correctly defined */}
                 </div>
                 <div>
                   <NavLink>
-                    <button className="px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">
+                    <button className="px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white mt-3 sm:mt-0">
                       View Details
                     </button>
                   </NavLink>
