@@ -19,9 +19,9 @@ export default function TeachersDetails() {
         <div className="my-5">
             <h1 className="text-4xl font-bold">Teacher Details</h1>
         </div>
-        <div className="flex gap-5 items-center justify-center bg-gray-100 p-5 rounded-2xl mb-8">
+        <div className="flex flex-col md:flex-row gap-5 items-center justify-center bg-gray-100 p-5 rounded-2xl mb-8">
                 <div className=" ">
-                    <img className="w-44 rounded-2xl" src={image} alt="" />
+                    <img className="w-60 md:w-44 rounded-2xl" src={image} alt="" />
                 </div>
                 <div className="">
                     <h1 className="text-xl font-bold">Name: {name}</h1>
