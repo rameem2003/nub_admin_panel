@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom"
 import { FaFacebook } from "react-icons/fa6";
+
 export default function Studentsdetails() {
     const [stddata, setStddata] = useState({})
     const data = useLoaderData();
@@ -22,7 +23,7 @@ const {image,name,stdId,email,birthdate,bloodGroup,fatherName,motherName,phone,c
             <div className="my-5">
                 <h1 className="text-4xl font-bold">Student Details</h1>
             </div>
-            <div className="flex gap-5 items-center justify-center bg-gray-100 p-5 rounded-2xl mb-8">
+            <div className="flex flex-col md:flex-row gap-5 items-center justify-center bg-gray-100 p-5 rounded-2xl mb-8">
                 <div className=" ">
                     <img className="w-44 rounded-2xl" src={image} alt="" />
                 </div>
@@ -41,7 +42,13 @@ const {image,name,stdId,email,birthdate,bloodGroup,fatherName,motherName,phone,c
                     <Link to={facebookId} target="blank">
                         <button className="px-2  rounded-2xl border-2 bg-blue-600 text-gray-100 flex items-center gap-2">Facebook <FaFacebook/></button>
                     </Link>
+                    <hr className="my-5"></hr>
+                    <div className=" flex gap-5"> 
+                        <button className="btn btn-success">Edit</button>
+                        <button className="btn btn-error">Delete</button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>

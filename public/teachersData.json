@@ -1,153 +1,82 @@
 [
-    {
-      "id": 1,
-      "tchId": "T1001",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "birthdate": "1985-03-12",
-      "bloodGroup": "O+",
-      "fatherName": "Robert Doe",
-      "motherName": "Sarah Doe",
-      "phone": "+1234567890",
-      "currentAddress": "123 Main St, Cityville",
-      "permanentAddress": "456 Oak Rd, Townsville",
-      "facebookId": "john.doe",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 2,
-      "tchId": "T1002",
-      "name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "birthdate": "1990-07-22",
-      "bloodGroup": "A-",
-      "fatherName": "William Smith",
-      "motherName": "Emily Smith",
-      "phone": "+0987654321",
-      "currentAddress": "789 Pine Ave, Springfield",
-      "permanentAddress": "101 Maple Dr, Riverside",
-      "facebookId": "jane.smith",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 3,
-      "tchId": "T1003",
-      "name": "Michael Johnson",
-      "email": "michaelj@example.com",
-      "birthdate": "1982-11-30",
-      "bloodGroup": "B+",
-      "fatherName": "David Johnson",
-      "motherName": "Linda Johnson",
-      "phone": "+1122334455",
-      "currentAddress": "456 Elm St, Greenfield",
-      "permanentAddress": "123 Birch Rd, Westford",
-      "facebookId": "michael.johnson",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 4,
-      "tchId": "T1004",
-      "name": "Linda Brown",
-      "email": "lindabrown@example.com",
-      "birthdate": "1992-02-15",
-      "bloodGroup": "O-",
-      "fatherName": "George Brown",
-      "motherName": "Barbara Brown",
-      "phone": "+1231231234",
-      "currentAddress": "101 Maple St, Farmville",
-      "permanentAddress": "202 Cedar Ave, Easton",
-      "facebookId": "linda.brown",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 5,
-      "tchId": "T1005",
-      "name": "David Lee",
-      "email": "davidlee@example.com",
-      "birthdate": "1978-06-05",
-      "bloodGroup": "AB+",
-      "fatherName": "Samuel Lee",
-      "motherName": "Grace Lee",
-      "phone": "+9876543210",
-      "currentAddress": "321 Oak St, Lakeside",
-      "permanentAddress": "654 Pine Dr, Lakeview",
-      "facebookId": "david.lee",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 6,
-      "tchId": "T1006",
-      "name": "Sophia Williams",
-      "email": "sophiawilliams@example.com",
-      "birthdate": "1988-09-27",
-      "bloodGroup": "A+",
-      "fatherName": "Richard Williams",
-      "motherName": "Margaret Williams",
-      "phone": "+1234324321",
-      "currentAddress": "567 Cedar St, Richmond",
-      "permanentAddress": "890 Oak Ave, Madison",
-      "facebookId": "sophia.williams",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 7,
-      "tchId": "T1007",
-      "name": "James Harris",
-      "email": "jamesharris@example.com",
-      "birthdate": "1980-12-01",
-      "bloodGroup": "B-",
-      "fatherName": "Richard Harris",
-      "motherName": "Catherine Harris",
-      "phone": "+2233445566",
-      "currentAddress": "890 Pine Rd, Hilltop",
-      "permanentAddress": "321 Maple St, Valleyview",
-      "facebookId": "james.harris",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 8,
-      "tchId": "T1008",
-      "name": "Patricia Martin",
-      "email": "patriciamartin@example.com",
-      "birthdate": "1975-04-20",
-      "bloodGroup": "O+",
-      "fatherName": "Edward Martin",
-      "motherName": "Helen Martin",
-      "phone": "+3344556677",
-      "currentAddress": "234 Birch Ave, Northfield",
-      "permanentAddress": "654 Oak Blvd, Harborview",
-      "facebookId": "patricia.martin",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 9,
-      "tchId": "T1009",
-      "name": "Robert Clark",
-      "email": "robertclark@example.com",
-      "birthdate": "1995-01-14",
-      "bloodGroup": "AB-",
-      "fatherName": "John Clark",
-      "motherName": "Dorothy Clark",
-      "phone": "+5566778899",
-      "currentAddress": "567 Elm Rd, Silverdale",
-      "permanentAddress": "123 Oak St, Lakewood",
-      "facebookId": "robert.clark",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    },
-    {
-      "id": 10,
-      "tchId": "T1010",
-      "name": "Mary Davis",
-      "email": "marydavis@example.com",
-      "birthdate": "1990-05-25",
-      "bloodGroup": "A-",
-      "fatherName": "James Davis",
-      "motherName": "Olivia Davis",
-      "phone": "+6677889900",
-      "currentAddress": "123 Pine Ave, Meadowbrook",
-      "permanentAddress": "234 Maple St, Brookside",
-      "facebookId": "mary.davis",
-      "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Sophia",
+    "sirname": "English lecturer",
+    "department": "English",
+    "phone": "+1234324321",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 2,
+    "name": "John",
+    "sirname": "Math lecturer",
+    "department": "Mathematics",
+    "phone": "+1234567890",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 3,
+    "name": "Jane",
+    "sirname": "Science lecturer",
+    "department": "Science",
+    "phone": "+0987654321",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 4,
+    "name": "Michael",
+    "sirname": "History lecturer",
+    "department": "History",
+    "phone": "+1122334455",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 5,
+    "name": "Linda",
+    "sirname": "Physics lecturer",
+    "department": "Physics",
+    "phone": "+1231231234",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 6,
+    "name": "David",
+    "sirname": "Chemistry lecturer",
+    "department": "Chemistry",
+    "phone": "+9876543210",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 7,
+    "name": "James",
+    "sirname": "Biology lecturer",
+    "department": "Biology",
+    "phone": "+2233445566",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 8,
+    "name": "Patricia",
+    "sirname": "Geography lecturer",
+    "department": "Geography",
+    "phone": "+3344556677",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 9,
+    "name": "Robert",
+    "sirname": "Computer Science lecturer",
+    "department": "Computer Science",
+    "phone": "+5566778899",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  },
+  {
+    "id": 10,
+    "name": "Mary",
+    "sirname": "Literature lecturer",
+    "department": "Literature",
+    "phone": "+6677889900",
+    "image": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+  }
+]

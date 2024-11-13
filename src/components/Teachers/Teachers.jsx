@@ -52,9 +52,9 @@ export default function Teachers() {
                     src={teacher.image}
                   />
                 </div>
-                <div className="text-center sm:text-left mt-3 sm:mt-0">
+                <div className="text-center flex flex-col items-center sm:text-left mt-3 sm:mt-0">
                   <h1 className="font-bold">{teacher.name}</h1>
-                  <p className="text-sm text-gray-700">Subject: {teacher.subject}</p> {/* Ensure subject property is correctly defined */}
+                  <p className="text-sm text-gray-700"> {teacher.sirname}</p> {/* Ensure subject property is correctly defined */}
                 </div>
                 <div>
                   <NavLink to={`/tchdetails/${teacher.id}`}>
