@@ -1,5 +1,6 @@
 import { NavLink, useLoaderData } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
+import { Helmet } from "react-helmet";
 
 export default function Students() {
   const studentData = useLoaderData();
@@ -7,6 +8,9 @@ export default function Students() {
 
   return (
     <div>
+      <Helmet>
+          <title>Student Info || Admin Panel</title>
+        </Helmet>
       <div className="">
         <div className="flex items-center justify-between navbar bg-base-100 px-4 py-2 md:px-5 md:py-3">
           <div className="">
@@ -53,7 +57,7 @@ export default function Students() {
                   <p className="text-sm text-gray-700">Std ID: {student.stdId}</p>
                 </div>
                 <div>
-                  <NavLink>
+                  <NavLink to={`/stddetails/${student.id}`}>
                     <button className="px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white mt-3 sm:mt-0">
                       View Details
                     </button>

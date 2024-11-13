@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { GiTeacher } from "react-icons/gi";
 import { IoNotifications } from "react-icons/io5";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
@@ -7,7 +8,9 @@ import { NavLink } from "react-router-dom";
 export default function Dashboard() {
   return (
     <div className="">
-      
+        <Helmet>
+          <title>Dashboard || Admin Panel</title>
+        </Helmet>
       <div className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-5 p-5">
         <div className="bg-blue-400 rounded-lg">
           <div className="m-3 flex flex-col items-center">

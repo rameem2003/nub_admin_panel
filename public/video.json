@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "title": "Introduction to React",
+      "description": "An introductory video explaining the basics of React and its core concepts.",
+      "uploadDate": "2024-01-15",
+      "duration": "15:30",
+      "instructor": "Jane Doe",
+      "thumbnailUrl": "https://i.ibb.co.com/p4ZNjy7/images.png",
+      "videoUrl": "https://example.com/videos/react-intro.mp4",
+      "views": 2500
+    },
+    {
+      "id": 2,
+      "title": "JavaScript ES6 Features",
+      "description": "A video covering the new features introduced in JavaScript ES6.",
+      "uploadDate": "2024-02-10",
+      "duration": "20:45",
+      "instructor": "John Smith",
+      "thumbnailUrl": "https://i.ibb.co.com/p4ZNjy7/images.png",
+      "videoUrl": "https://example.com/videos/js-es6.mp4",
+      "views": 3400
+    },
+    {
+      "id": 3,
+      "title": "Advanced CSS Techniques",
+      "description": "Learn advanced CSS techniques to enhance the design and interactivity of web pages.",
+      "uploadDate": "2024-03-01",
+      "duration": "18:25",
+      "instructor": "Sarah Johnson",
+      "thumbnailUrl": "https://i.ibb.co.com/p4ZNjy7/images.png",
+      "videoUrl": "https://example.com/videos/css-advanced.mp4",
+      "views": 1900
+    },
+    {
+      "id": 4,
+      "title": "Python for Data Science",
+      "description": "An introduction to using Python for data science, including libraries like Pandas and NumPy.",
+      "uploadDate": "2024-04-12",
+      "duration": "25:00",
+      "instructor": "Emily Brown",
+      "thumbnailUrl": "https://i.ibb.co.com/p4ZNjy7/images.png",
+      "videoUrl": "https://example.com/videos/python-data-science.mp4",
+      "views": 4200
+    },
+    {
+      "id": 5,
+      "title": "Machine Learning Basics",
+      "description": "A beginner-friendly overview of machine learning concepts and algorithms.",
+      "uploadDate": "2024-05-20",
+      "duration": "22:15",
+      "instructor": "Michael Wilson",
+      "thumbnailUrl": "https://i.ibb.co.com/p4ZNjy7/images.png",
+      "videoUrl": "https://example.com/videos/ml-basics.mp4",
+      "views": 5600
+    }
+  ]
+  

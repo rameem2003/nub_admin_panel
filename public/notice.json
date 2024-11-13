@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "title": "Mathematics Assignment Submission",
+      "description": "All students must submit their mathematics assignments by 25th November 2024.",
+      "publishedDate": "2024-11-10",
+      "dueDate": "2024-11-25",
+      "teacher": "Mr. John Doe",
+      "subject": "Mathematics",
+      "status": "Published"
+    },
+    {
+      "id": 2,
+      "title": "Holiday Announcement",
+      "description": "School will be closed on 15th November for National Holiday. Please plan accordingly.",
+      "publishedDate": "2024-11-05",
+      "dueDate": "2024-11-15",
+      "teacher": "Admin",
+      "subject": "General",
+      "status": "Published"
+    },
+    {
+      "id": 3,
+      "title": "Science Lab Equipment Maintenance",
+      "description": "Science lab will be closed for maintenance from 20th November to 22nd November 2024. Please plan experiments accordingly.",
+      "publishedDate": "2024-11-12",
+      "dueDate": "2024-11-22",
+      "teacher": "Mrs. Jane Smith",
+      "subject": "Science",
+      "status": "Published"
+    },
+    {
+      "id": 4,
+      "title": "Annual Sports Day Announcement",
+      "description": "The Annual Sports Day will be held on 30th November. All students are encouraged to participate.",
+      "publishedDate": "2024-11-02",
+      "dueDate": "2024-11-30",
+      "teacher": "Mr. David Lee",
+      "subject": "Physical Education",
+      "status": "Published"
+    },
+    {
+      "id": 5,
+      "title": "Parent-Teacher Meeting",
+      "description": "The Parent-Teacher meeting is scheduled for 18th November 2024. Please make arrangements to attend.",
+      "publishedDate": "2024-11-06",
+      "dueDate": "2024-11-18",
+      "teacher": "Admin",
+      "subject": "General",
+      "status": "Published"
+    }
+  ]
+  

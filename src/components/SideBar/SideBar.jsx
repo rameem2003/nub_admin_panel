@@ -36,8 +36,8 @@ export default function SideBar() {
                 <NavLink to={'/students'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><PiStudentFill/>Students</NavLink>
                 <NavLink to={'/teachers'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><GiTeacher/>Teachers</NavLink>
                 <NavLink to={'/notice'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><IoNotifications/>Notice</NavLink>
-                <NavLink to={'/notice'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><RxBarChart/>Result</NavLink>
-                <NavLink to={'/notice'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><MdOutlineSlowMotionVideo/>Videos</NavLink>
+                <NavLink to={'/result'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><RxBarChart/>Result</NavLink>
+                <NavLink to={'/videos'} className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 rounded-lg`}><MdOutlineSlowMotionVideo/>Videos</NavLink>
             </nav>
         </div>
     </div>

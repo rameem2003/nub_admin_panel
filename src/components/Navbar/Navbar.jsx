@@ -47,11 +47,11 @@ export default function Navbar() {
             {/* Navigation Links */}
             <nav className="text-xl flex flex-col gap-5 w-full">
               <NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><MdSpaceDashboard />Dashboard</NavLink>
-              <NavLink to="/students" className="flex gap-2 items-center justify-start px-2 py-1 rounded-lg"><PiStudentFill />Students</NavLink>
-              <NavLink to="/teachers" className="flex gap-2 items-center justify-start px-2 py-1 rounded-lg"><GiTeacher />Teachers</NavLink>
-              <NavLink to="/notice" className="flex gap-2 items-center justify-start px-2 py-1 rounded-lg"><IoNotifications />Notice</NavLink>
-              <NavLink to="/result" className="flex gap-2 items-center justify-start px-2 py-1 rounded-lg"><RxBarChart />Result</NavLink>
-              <NavLink to="/videos" className="flex gap-2 items-center justify-start px-2 py-1 rounded-lg"><MdOutlineSlowMotionVideo />Videos</NavLink>
+              <NavLink to="/students" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><PiStudentFill />Students</NavLink>
+              <NavLink to="/teachers" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><GiTeacher />Teachers</NavLink>
+              <NavLink to="/notice" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><IoNotifications />Notice</NavLink>
+              <NavLink to="/result" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><RxBarChart />Result</NavLink>
+              <NavLink to="/videos" className={({ isActive }) => `${isActive ? 'bg-pink-500 text-white' : 'text-gray-600'} flex gap-2 items-center justify-start px-2 py-1 rounded-lg`}><MdOutlineSlowMotionVideo />Videos</NavLink>
             </nav>
           </div>
         </div>
