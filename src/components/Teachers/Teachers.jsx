@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { Helmet } from "react-helmet";
 
@@ -34,9 +34,9 @@ export default function Teachers() {
             </button>
           </label>
           <div>
-            <NavLink className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl">
+            <NavLink to={'/teachers/addTeacher'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
               <MdPersonAddAlt1 className="text-xl" />
-              <button className="text-xs font-bold">Add Teacher</button>
+              <Link  className="text-xs font-bold">Add Teacher</Link>
             </NavLink>
           </div>
         </div>

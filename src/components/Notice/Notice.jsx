@@ -31,7 +31,7 @@ export default function Notice() {
             </button>
           </label>
           <div>
-            <NavLink className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl">
+            <NavLink to={'/notice/noticeDetails'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
               <MdOutlineNotificationAdd className="text-xl" />
               <button className="text-xs font-bold">Add Notice</button>
             </NavLink>

@@ -1,16 +1,16 @@
-import { NavLink, useLoaderData } from "react-router-dom";
+import { Link, NavLink,  } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 export default function Students() {
-  const studentData = useLoaderData();
-  console.log(studentData);
-
+  const students = useSelector((state) => state.allstudents.students); // get all students info
+  const studentData = [...students];
   return (
     <div>
       <Helmet>
-          <title>Student Info || Admin Panel</title>
-        </Helmet>
+        <title>Student Info || Admin Panel</title>
+      </Helmet>
       <div className="">
         <div className="flex items-center justify-between navbar bg-base-100 px-4 py-2 md:px-5 md:py-3">
           <div className="">
@@ -34,38 +34,42 @@ export default function Students() {
             </button>
           </label>
           <div>
-            <NavLink className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl">
+            <NavLink to={'/students/addStudent'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
               <MdPersonAddAlt1 className="text-xl" />
-              <button className="text-xs font-bold">Add Student</button>
+              <Link  className="text-xs font-bold ">Add Student</Link>
             </NavLink>
           </div>
         </div>
 
-        <div className="mt-5 h-[60vh] overflow-y-auto"> 
-          {studentData.map((student) => (
-            <div key={student.id} className="mt-5">
-              <div className="bg-blue-200 mx-4 sm:mx-6 md:mx-10 rounded-xl py-3 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-5">
-                <div>
-                  <img
-                    className="rounded-full w-12 h-12 sm:w-10 sm:h-10"
-                    alt="Student Avatar"
-                    src={student.image}
-                  />
-                </div>
-                <div className="text-center sm:text-left mt-3 sm:mt-0">
-                  <h1 className="font-bold">{student.name}</h1>
-                  <p className="text-sm text-gray-700">Std ID: {student.stdId}</p>
-                </div>
-                <div>
-                  <NavLink to={`/stddetails/${student.id}`}>
-                    <button className="px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white mt-3 sm:mt-0">
-                      View Details
-                    </button>
-                  </NavLink>
+        <div className="mt-5 h-[60vh] overflow-y-auto">
+          {studentData
+            .sort((a, b) => a.id - b.id)
+            .map((student) => (
+              <div key={student.id} className="mt-5">
+                <div className="bg-blue-200 mx-4 sm:mx-6 md:mx-10 rounded-xl py-3 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-5">
+                  <div>
+                    <img
+                      className="rounded-full w-12 h-12 sm:w-10 sm:h-10"
+                      alt="Student Avatar"
+                      src={student.studentImage}
+                    />
+                  </div>
+                  <div className="text-center sm:text-left mt-3 sm:mt-0">
+                    <h1 className="font-bold">{student.studentName}</h1>
+                    <p className="text-sm text-gray-700">
+                      Std ID: {student.id}
+                    </p>
+                  </div>
+                  <div>
+                    <NavLink to={`/stddetails/${student.id}`}>
+                      <button className="px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white mt-3 sm:mt-0">
+                        View Details
+                      </button>
+                    </NavLink>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
