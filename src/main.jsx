@@ -16,6 +16,7 @@ import Store from "./redux/app/Store";
 import AddStudent from "./components/AddStudent/AddStudent";
 import AddTeacher from "./components/AddTeacher/AddTeacher";
 import AddNotice from "./components/AddNotice/AddNotice";
+import LogIn from "./components/LogIn/LogIn.";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard></Dashboard>,
       },
+      
       {
         path: "/students",
         element: <Students></Students>,
@@ -64,15 +66,16 @@ const router = createBrowserRouter([
         path: "/stddetails/:id",
         element: <Studentsdetails></Studentsdetails>,
       },
-      
-      
-     
       {
         path: "/tchdetails/:id",
         element: <TeachersDetails></TeachersDetails>,
         loader: () => fetch("/teachersData.json"),
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <LogIn></LogIn>
   },
 ]);
 
