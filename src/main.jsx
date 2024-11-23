@@ -13,12 +13,6 @@ import Studentsdetails from "./components/Studentsdetails/Studentsdetails";
 import TeachersDetails from "./components/TeachersDetails/TeachersDetails";
 import { Provider } from "react-redux";
 import Store from "./redux/app/Store";
-<<<<<<< HEAD
-import AddStudent from "./components/AddStudent/AddStudent";
-import AddTeacher from "./components/AddTeacher/AddTeacher";
-import AddNotice from "./components/AddNotice/AddNotice";
-=======
->>>>>>> dca01ae632bd79d2ab817c7c9dfe566cdcdceb93
 
 const router = createBrowserRouter([
   {
@@ -33,10 +27,6 @@ const router = createBrowserRouter([
       {
         path: "/students",
         element: <Students></Students>,
-<<<<<<< HEAD
-=======
-        loader: () => fetch("/studentsData.json"),
->>>>>>> dca01ae632bd79d2ab817c7c9dfe566cdcdceb93
       },
       {
         path: "/teachers",
@@ -56,23 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/stddetails/:id",
         element: <Studentsdetails></Studentsdetails>,
-<<<<<<< HEAD
       },
-      {
-        path: '/students/addStudent',
-        element: <AddStudent></AddStudent>,
-      },
-      {
-        path: '/teachers/addTeacher',
-        element: <AddTeacher></AddTeacher>,
-      },
-      {
-        path: '/notice/noticeDetails',
-        element: <AddNotice></AddNotice>,
-=======
-        loader: () => fetch("/studentsData.json"),
->>>>>>> dca01ae632bd79d2ab817c7c9dfe566cdcdceb93
-      },
+      
+      
+     
       {
         path: "/tchdetails/:id",
         element: <TeachersDetails></TeachersDetails>,
