@@ -3,7 +3,7 @@ export default function AddNotice() {
   return (
     <div>
     <div className="text-2xl font-bold text-center my-5">
-      <h1>Add Teacher</h1>
+      <h1>Add Notice</h1>
      </div>
      <div className="card bg-base-100  w-11/12 md:w-6/12 mx-auto shrink-0 shadow-2xl mb-5   ">
      

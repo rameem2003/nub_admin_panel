@@ -13,6 +13,9 @@ import Studentsdetails from "./components/Studentsdetails/Studentsdetails";
 import TeachersDetails from "./components/TeachersDetails/TeachersDetails";
 import { Provider } from "react-redux";
 import Store from "./redux/app/Store";
+import AddStudent from "./components/AddStudent/AddStudent";
+import AddTeacher from "./components/AddTeacher/AddTeacher";
+import AddNotice from "./components/AddNotice/AddNotice";
 
 const router = createBrowserRouter([
   {
@@ -29,14 +32,28 @@ const router = createBrowserRouter([
         element: <Students></Students>,
       },
       {
+        path: "/students/addStudent",
+        element: <AddStudent/>
+      },
+      {
         path: "/teachers",
         element: <Teachers></Teachers>,
         loader: () => fetch("/teachersData.json"),
       },
       {
+        path: "/teachers/addTeacher",
+        element:<AddTeacher/>
+        
+      },
+      {
         path: "/notice",
         element: <Notice></Notice>,
         loader: () => fetch("/notice.json"),
+      },
+      {
+        path: "/notice/addNotice",
+        element: <AddNotice/>
+        
       },
       {
         path: "/videos",
