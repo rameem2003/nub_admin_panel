@@ -33,7 +33,11 @@ export default function Navbar() {
     <div>
       <div className="flex items-center justify-between text-xl font-bold px-8 py-5 bg-gray-300 ">
         <h1>Welcome To NUBian!</h1>
+<<<<<<< HEAD
         <Link to={'/'} className="hidden md:flex">Dashboard</Link>
+=======
+        <h1 className="hidden md:flex">Dashboard</h1>
+>>>>>>> dca01ae632bd79d2ab817c7c9dfe566cdcdceb93
 
         <div
           className="text-2xl md:hidden cursor-pointer"

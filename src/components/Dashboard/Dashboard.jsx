@@ -19,7 +19,11 @@ export default function Dashboard() {
             <PiStudentFill className="text-4xl" />
             <h1 className=" font-bold">Total Students</h1>
             <p className="text-xl font-bold">
+<<<<<<< HEAD
               {students?.length ? students.length : "0"}
+=======
+              {students?.length ? students.length : "45"}
+>>>>>>> dca01ae632bd79d2ab817c7c9dfe566cdcdceb93
             </p>
           </div>
         </div>
