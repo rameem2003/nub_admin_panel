@@ -36,9 +36,10 @@ export default function Students() {
           <div>
             <NavLink to={'/students/addStudent'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
               <MdPersonAddAlt1 className="text-xl" />
-              <Link  className="text-xs font-bold ">Add Student</Link>
+              <button className="text-xs font-bold">Add Student</button>
             </NavLink>
           </div>
+          
         </div>
 
         <div className="mt-5 h-[60vh] overflow-y-auto">

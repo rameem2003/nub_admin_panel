@@ -36,7 +36,7 @@ export default function Teachers() {
           <div>
             <NavLink to={'/teachers/addTeacher'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
               <MdPersonAddAlt1 className="text-xl" />
-              <Link  className="text-xs font-bold">Add Teacher</Link>
+              <button className="text-xs font-bold">Add Teacher</button>
             </NavLink>
           </div>
         </div>
