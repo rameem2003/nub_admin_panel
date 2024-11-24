@@ -1,16 +1,17 @@
 import { Link, NavLink, useLoaderData } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 
 export default function Teachers() {
-  const teachersData = useLoaderData();
-  console.log(teachersData);
+  const teachers = useSelector((state) => state.allteachers.teachers); // get all teachers info
+  const teachersData = [...teachers];
 
   return (
     <div>
       <Helmet>
-          <title>Teachers Info || Admin Panel</title>
-        </Helmet>
+        <title>Teachers Info || Admin Panel</title>
+      </Helmet>
       <div>
         <div className="flex items-center justify-between navbar bg-base-100 px-4 py-2 md:px-5 md:py-3">
           <div className="">
@@ -34,9 +35,12 @@ export default function Teachers() {
             </button>
           </label>
           <div>
-            <NavLink to={'/teachers/addTeacher'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
+            <NavLink
+              to={"/teachers/addTeacher"}
+              className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500"
+            >
               <MdPersonAddAlt1 className="text-xl" />
-              <Link  className="text-xs font-bold">Add Teacher</Link>
+              <Link className="text-xs font-bold">Add Teacher</Link>
             </NavLink>
           </div>
         </div>
@@ -54,7 +58,10 @@ export default function Teachers() {
                 </div>
                 <div className="text-center flex flex-col items-center sm:text-left mt-3 sm:mt-0">
                   <h1 className="font-bold">{teacher.name}</h1>
-                  <p className="text-sm text-gray-700"> {teacher.sirname}</p> {/* Ensure subject property is correctly defined */}
+                  <p className="text-sm text-gray-700">
+                    {teacher.designation}, {teacher.department}
+                  </p>
+                  {/* Ensure subject property is correctly defined */}
                 </div>
                 <div>
                   <NavLink to={`/tchdetails/${teacher.id}`}>
