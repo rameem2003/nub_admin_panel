@@ -11,6 +11,7 @@ import { RxBarChart } from "react-icons/rx";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { student } from "../../redux/feature/StudentsSlice";
+import { teacher } from "../../redux/feature/TeachersSlice";
 
 export default function Navbar() {
   const dispatch = useDispatch(); // dispatch instance
@@ -25,8 +26,18 @@ export default function Navbar() {
     dispatch(student(res.data));
   };
 
+  /**
+   * Fetch all teachers data
+   */
+
+  const fetchTechers = async () => {
+    let res = await axios.get(`${import.meta.env.VITE_API_URL}teachers`);
+    dispatch(teacher(res.data));
+  };
+
   useEffect(() => {
     fetchStudents();
+    fetchTechers();
   }, []);
 
   return (
@@ -34,8 +45,9 @@ export default function Navbar() {
       <div className="flex items-center justify-between text-xl font-bold px-8 py-5 bg-gray-300 ">
         <h1>Welcome To NUBian!</h1>
 
-        <Link to={'/'} className="hidden md:flex">Dashboard</Link>
-
+        <Link to={"/"} className="hidden md:flex">
+          Dashboard
+        </Link>
 
         <div
           className="text-2xl md:hidden cursor-pointer"
