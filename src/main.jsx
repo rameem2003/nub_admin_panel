@@ -11,12 +11,12 @@ import Video from "./components/Video/Video";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Studentsdetails from "./components/Studentsdetails/Studentsdetails";
 import TeachersDetails from "./components/TeachersDetails/TeachersDetails";
-import { Provider } from "react-redux";
 import Store from "./redux/app/Store";
 import AddStudent from "./components/AddStudent/AddStudent";
 import AddTeacher from "./components/AddTeacher/AddTeacher";
 import AddNotice from "./components/AddNotice/AddNotice";
 import LogIn from "./components/LogIn/LogIn.";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
   {
@@ -28,14 +28,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard></Dashboard>,
       },
-      
+
       {
         path: "/students",
         element: <Students></Students>,
       },
       {
         path: "/students/addStudent",
-        element: <AddStudent/>
+        element: <AddStudent />,
       },
       {
         path: "/teachers",
@@ -44,8 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/teachers/addTeacher",
-        element:<AddTeacher/>
-        
+        element: <AddTeacher />,
       },
       {
         path: "/notice",
@@ -54,8 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/notice/addNotice",
-        element: <AddNotice/>
-        
+        element: <AddNotice />,
       },
       {
         path: "/videos",
@@ -75,7 +73,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LogIn></LogIn>
+    element: <LogIn></LogIn>,
   },
 ]);
 

@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 export default function TeachersDetails() {
+  const navigate = useNavigate();
   const { id } = useParams(); // get params
   const [teacherdata, setTeacherdata] = useState({}); // store the data
+  const [loading, setLoading] = useState(false);
+  const [errr, setError] = useState(false);
 
   /**
    * Fetch single student data
@@ -13,6 +16,27 @@ export default function TeachersDetails() {
     let res = await axios.get(`${import.meta.env.VITE_API_URL}teachers/${id}`);
     setTeacherdata(res.data);
     console.log(res);
+  };
+
+  // fucntion for delete the teacher
+  const deleteTeacher = async () => {
+    setLoading(true);
+    setError(false);
+    try {
+      let res = await axios.delete(
+        `${import.meta.env.VITE_API_URL}teachers/${id}`
+      );
+
+      console.log(res);
+
+      setLoading(false);
+      navigate("/teachers");
+    } catch (error) {
+      console.log(error);
+
+      setLoading(false);
+      setError(true);
+    }
   };
 
   useEffect(() => {
@@ -38,10 +62,24 @@ export default function TeachersDetails() {
             <hr className="my-5"></hr>
             <div className=" flex gap-5">
               <button className="btn btn-success">Edit</button>
-              <button className="btn btn-error">Delete</button>
+              {loading ? (
+                <button className="btn bg-gray-500 pointer-events-none">
+                  Delete
+                </button>
+              ) : (
+                <button onClick={deleteTeacher} className="btn btn-error">
+                  Delete
+                </button>
+              )}
             </div>
           </div>
         </div>
+
+        {errr && (
+          <p className=" text-xl text-red-500 font-bold">
+            Something Went Wrong
+          </p>
+        )}
       </div>
     </div>
   );

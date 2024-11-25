@@ -8,6 +8,9 @@ import { NavLink } from "react-router-dom";
 
 export default function Dashboard() {
   const students = useSelector((state) => state.allstudents.students); // get all students info
+  const teachers = useSelector((state) => state.allteachers.teachers); // get all students info
+  const notices = useSelector((state) => state.allnotices.notices); // get all notice info
+  const noticeData = [...notices];
   return (
     <div className="">
       <Helmet>
@@ -19,8 +22,7 @@ export default function Dashboard() {
             <PiStudentFill className="text-4xl" />
             <h1 className=" font-bold">Total Students</h1>
             <p className="text-xl font-bold">
-              {students?.length ? students.length : "0"}     
-
+              {students?.length ? students.length : "0"}
             </p>
           </div>
         </div>
@@ -28,14 +30,18 @@ export default function Dashboard() {
           <div className="m-3 flex flex-col items-center">
             <GiTeacher className="text-4xl" />
             <h1 className=" font-bold">Total Teachers</h1>
-            <p className="text-xl font-bold">45</p>
+            <p className=" text-xl font-bold">
+              {teachers?.length ? teachers.length : "0"}
+            </p>
           </div>
         </div>
         <div className="bg-blue-300 rounded-lg">
           <div className="m-3 flex flex-col items-center">
             <IoNotifications className="text-4xl" />
             <h1 className=" font-bold">Total Notice</h1>
-            <p className="text-xl font-bold">45</p>
+            <p className="text-xl font-bold">
+              {notices?.length ? notices.length : "0"}
+            </p>
           </div>
         </div>
         <div className="bg-red-300 rounded-lg">
@@ -50,39 +56,39 @@ export default function Dashboard() {
         <div className="text-center">
           <h1 className="text-2xl font-bold">Recent Annoucement</h1>
         </div>
-        <div className="mt-5">
-          <div className=" bg-blue-200 md:mx-10 rounded-xl py-3  flex items-center justify-between mx-5 px-2">
-            <div className="">
-              <h1 className=" font-bold">Mathemetics assignment</h1>
-              <p className="text-sm text-gray-700">
-                Published date: 20-november-2024
-              </p>
-            </div>
-            <div className="">
-              <NavLink>
-                <button className=" px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">
-                  View Details
-                </button>
-              </NavLink>
-            </div>
-          </div>
-        </div>
-        <div className="mt-5">
-          <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between mx-5 px-2">
-            <div className="">
-              <h1 className=" font-bold">Mathemetics assignment</h1>
-              <p className="text-sm text-gray-700">
-                Published date: 20-november-2024
-              </p>
-            </div>
-            <div className="">
-              <NavLink>
-                <button className=" px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">
-                  View Details
-                </button>
-              </NavLink>
-            </div>
-          </div>
+        <div>
+          {" "}
+          {noticeData
+            .sort((a, b) => b.noticeTimeString - a.noticeTimeString)
+            .map((notice) => (
+              <div key={notice.id} className="mt-5">
+                <div className=" bg-blue-200 md:mx-10 rounded-xl py-3 flex items-center justify-between mx-5 px-5">
+                  <div className="">
+                    <h1 className=" w-36 md:w-full font-bold">
+                      {notice.title}
+                    </h1>
+                    <p className="text-sm text-gray-700">
+                      Published date: {notice.noticeTimeStamp}
+                    </p>
+                  </div>
+                  <div className="">
+                    <a
+                      target="_blank"
+                      href={notice.pdf}
+                      className=" mr-5 px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white"
+                    >
+                      PDF
+                    </a>
+
+                    <NavLink>
+                      <button className=" px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white">
+                        View Details
+                      </button>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

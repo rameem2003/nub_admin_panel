@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/images.jfif";
+import axios from "axios";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
@@ -8,12 +9,15 @@ import { PiStudentFill } from "react-icons/pi";
 import { GiTeacher } from "react-icons/gi";
 import { IoNotifications } from "react-icons/io5";
 import { RxBarChart } from "react-icons/rx";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { student } from "../../redux/feature/StudentsSlice";
 import { teacher } from "../../redux/feature/TeachersSlice";
+import { notice } from "../../redux/feature/NoticesSlice";
 
 export default function Navbar() {
+  const [students, setStudents] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+  const [notices, setNotices] = useState([]);
   const dispatch = useDispatch(); // dispatch instance
   const [open, setOpen] = useState(false);
 
@@ -24,6 +28,8 @@ export default function Navbar() {
   const fetchStudents = async () => {
     let res = await axios.get(`${import.meta.env.VITE_API_URL}students`);
     dispatch(student(res.data));
+    setStudents(res.data);
+    // console.log(res.data);
   };
 
   /**
@@ -33,11 +39,24 @@ export default function Navbar() {
   const fetchTechers = async () => {
     let res = await axios.get(`${import.meta.env.VITE_API_URL}teachers`);
     dispatch(teacher(res.data));
+    setTeachers(res.data);
+    // console.log(res.data);
+  };
+  /**
+   * Fetch all notice data
+   */
+
+  const fetchNotices = async () => {
+    let res = await axios.get(`${import.meta.env.VITE_API_URL}notices`);
+    dispatch(notice(res.data));
+    setNotices(res.data);
+    // console.log(res.data);
   };
 
   useEffect(() => {
     fetchStudents();
     fetchTechers();
+    fetchNotices();
   }, []);
 
   return (

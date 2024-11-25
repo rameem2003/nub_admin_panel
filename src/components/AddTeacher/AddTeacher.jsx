@@ -1,6 +1,10 @@
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
-export default function AddTeacher() {
+function AddTeacher() {
+  const navigate = useNavigate();
   // all states
   const [name, setName] = useState("");
   const [designation, setDesignation] = useState("");
@@ -8,8 +12,47 @@ export default function AddTeacher() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [errr, setError] = useState(false);
 
-  // fuvntio
+  // function for add teacher
+  const addTeacher = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    let newTeacher = {
+      id: uuidv4(),
+      name,
+      designation,
+      image,
+      department,
+      email,
+      phone,
+      createTimeStamp: new Date().toLocaleString(),
+      createTimeString: Date.now(),
+    };
+    try {
+      let res = await axios.post(
+        `${import.meta.env.VITE_API_URL}teachers`,
+        newTeacher,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log(res);
+
+      setLoading(false);
+      navigate("/teachers");
+    } catch (error) {
+      console.log(error);
+
+      setLoading(false);
+      setError(true);
+    }
+  };
 
   return (
     <div>
@@ -92,10 +135,24 @@ export default function AddTeacher() {
           </div>
 
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Add Teacher</button>
+            {loading ? (
+              <button className="btn bg-gray-400 pointer-events-none">
+                Add Teacher
+              </button>
+            ) : (
+              <button className="btn btn-primary">Add Teacher</button>
+            )}
+
+            {errr && (
+              <p className=" text-xl text-red-500 font-bold">
+                Something Went Wrong
+              </p>
+            )}
           </div>
         </form>
       </div>
     </div>
   );
 }
+
+export default AddTeacher;

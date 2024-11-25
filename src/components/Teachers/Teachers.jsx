@@ -40,8 +40,6 @@ export default function Teachers() {
               className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500"
             >
               <MdPersonAddAlt1 className="text-xl" />
-
-              
             </NavLink>
           </div>
         </div>
