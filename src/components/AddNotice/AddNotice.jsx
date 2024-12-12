@@ -1,17 +1,20 @@
 import axios from "axios";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 export default function AddNotice() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // navigation instance
+  const teachers = useSelector((state) => state.allteachers.teachers); // get all students info
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [noticeBy, setNoticeBy] = useState("");
   const [pdf, setPdf] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errr, setError] = useState(false);
 
-  // funtion for add notice
+  // function for add notice
   const addNotice = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -23,6 +26,7 @@ export default function AddNotice() {
       formData.append("id", uuidv4());
       formData.append("title", title);
       formData.append("description", description);
+      formData.append("noticeBy", noticeBy);
       formData.append("thumb", "https://convocation.nub.ac.bd/CampusImage.png");
       formData.append("pdf", pdf);
       formData.append("noticeTimeStamp", new Date().toLocaleString());
@@ -67,30 +71,6 @@ export default function AddNotice() {
               required
             />
           </div>
-          {/* <div className="form-control">
-        <label className="label">
-          <span className="label-text">Subject</span>
-        </label>
-        <input type="text" placeholder="Subject" className="input input-bordered" required />
-      </div> */}
-          {/* <div className="form-control">
-        <label className="label">
-          <span className="label-text">Teachers Name</span>
-        </label>
-        <input type="text" placeholder="Teachers Name" className="input input-bordered" required />
-      </div> */}
-          {/* <div className="form-control">
-        <label className="label">
-          <span className="label-text">Published Date</span>
-        </label>
-        <input type="text" placeholder="Published Date" className="input input-bordered" required />
-      </div>
-      <div className="form-control">
-        <label className="label">
-          <span className="label-text">Due Date</span>
-        </label>
-        <input type="text" placeholder="Due Date" className="input input-bordered" required />
-      </div> */}
           <div className="form-control">
             <label className="label">
               <span className="label-text">Description</span>
@@ -100,6 +80,30 @@ export default function AddNotice() {
               className="textarea textarea-bordered h-24"
               placeholder="Description"
             ></textarea>
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Notice Provided By</span>
+            </label>
+
+            <select
+              name=""
+              id=""
+              onChange={(e) => setNoticeBy(e.target.value)}
+              className="input input-bordered"
+              required
+            >
+              <option value="Admin">Admin</option>
+              {teachers.map((t, i) => (
+                <option
+                  key={i}
+                  value={`${t.name} (${t.designation} - ${t.department})`}
+                >
+                  {t.name}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="form-control">
