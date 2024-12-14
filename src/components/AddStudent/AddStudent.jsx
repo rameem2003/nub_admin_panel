@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function AddStudent() {
   const navigate = useNavigate();
@@ -62,13 +63,34 @@ export default function AddStudent() {
 
       console.log(res);
 
-      setLoading(false);
-      navigate("/");
+      Swal.fire({
+        icon: "success",
+        title: "Successful",
+        confirmButtonText: "Save",
+        confirmButtonColor: "green",
+      })
+        .then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            setLoading(false);
+            navigate("/");
+          }
+        })
+        .finally(() => {
+          setLoading(false);
+          navigate("/");
+        });
     } catch (error) {
       console.log(error);
 
       setLoading(false);
       setError(true);
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
 

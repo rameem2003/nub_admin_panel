@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Studentsdetails() {
   const { id } = useParams(); // get params
@@ -15,6 +16,47 @@ export default function Studentsdetails() {
     let res = await axios.get(`${import.meta.env.VITE_API_URL}students/${id}`);
     setStddata(res.data);
     console.log(res);
+  };
+
+  /**
+   * Delete the student
+   */
+
+  const deleteStudent = async () => {
+    Swal.fire({
+      icon: "question",
+      title: "Do you want to delete?",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      confirmButtonColor: "red",
+      cancelButtonText: "Cancel",
+      cancelButtonColor: "green",
+    }).then(async (result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        try {
+          let res = await axios.delete(
+            `${import.meta.env.VITE_API_URL}students/${stddata.id}`
+          );
+
+          console.log(res);
+
+          Swal.fire({
+            icon: "success",
+            title: "Delete Successful",
+            // text: "Something went wrong!",
+          });
+        } catch (error) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      } else {
+        Swal.fire("Cancel", "", "info");
+      }
+    });
   };
 
   useEffect(() => {
@@ -55,7 +97,9 @@ export default function Studentsdetails() {
             <hr className="my-5"></hr>
             <div className=" flex gap-5">
               <button className="btn btn-success">Edit</button>
-              <button className="btn btn-error">Delete</button>
+              <button onClick={deleteStudent} className="btn btn-error">
+                Delete
+              </button>
             </div>
           </div>
         </div>
