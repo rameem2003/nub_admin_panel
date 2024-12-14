@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { MdOutlineNotificationAdd } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { NavLink, useLoaderData } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Notice() {
   const notices = useSelector((state) => state.allnotices.notices); // get all notice info
@@ -15,20 +16,46 @@ export default function Notice() {
   const deleteNotice = async (id) => {
     setLoading(true);
     setError(false);
-    try {
-      let res = await axios.delete(
-        `${import.meta.env.VITE_API_URL}notices/${id}`
-      );
 
-      console.log(res);
+    Swal.fire({
+      icon: "question",
+      title: "Do you want to delete?",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      confirmButtonColor: "red",
+      cancelButtonText: "Cancel",
+      cancelButtonColor: "green",
+    }).then(async (result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        try {
+          let res = await axios.delete(
+            `${import.meta.env.VITE_API_URL}notices/${id}`
+          );
 
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
+          console.log(res);
+          setLoading(false);
 
-      setLoading(false);
-      setError(true);
-    }
+          Swal.fire({
+            icon: "success",
+            title: "Delete Successful",
+            // text: "Something went wrong!",
+          });
+        } catch (error) {
+          console.log(error);
+
+          setLoading(false);
+          setError(true);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      } else {
+        Swal.fire("Cancel", "", "info");
+      }
+    });
   };
   return (
     <div>
@@ -79,13 +106,16 @@ export default function Notice() {
                   </p>
                 </div>
                 <div className="">
-                  <a
-                    target="_blank"
-                    href={notice.pdf}
-                    className=" mr-5 px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white"
-                  >
-                    PDF
-                  </a>
+                  {notice.pdf && (
+                    <a
+                      target="_blank"
+                      href={notice.pdf}
+                      className=" mr-5 px-2 py-1 border-2 border-pink-600 rounded-2xl hover:bg-pink-600 hover:text-white"
+                    >
+                      PDF
+                    </a>
+                  )}
+
                   {loading ? (
                     <button className=" mr-5 px-2 py-1 border-2  rounded-2xl bg-gray-500 hover:text-white">
                       Delete

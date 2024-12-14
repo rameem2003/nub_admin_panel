@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import Swal from "sweetalert2";
 
 export default function AddNotice() {
   const navigate = useNavigate(); // navigation instance
@@ -43,13 +44,34 @@ export default function AddNotice() {
 
       console.log(res);
 
-      setLoading(false);
-      navigate("/");
+      Swal.fire({
+        icon: "success",
+        title: "Successful",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "green",
+      })
+        .then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            setLoading(false);
+            navigate("/");
+          }
+        })
+        .finally(() => {
+          setLoading(false);
+          navigate("/");
+        });
     } catch (error) {
       console.log(error);
 
       setLoading(false);
       setError(true);
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
   return (

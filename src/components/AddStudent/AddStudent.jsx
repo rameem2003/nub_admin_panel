@@ -66,7 +66,7 @@ export default function AddStudent() {
       Swal.fire({
         icon: "success",
         title: "Successful",
-        confirmButtonText: "Save",
+        confirmButtonText: "Ok",
         confirmButtonColor: "green",
       })
         .then((result) => {
