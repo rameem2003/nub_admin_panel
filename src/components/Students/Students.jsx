@@ -1,4 +1,4 @@
-import { Link, NavLink,  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
@@ -34,12 +34,14 @@ export default function Students() {
             </button>
           </label>
           <div>
-            <NavLink to={'/students/addStudent'} className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500">
+            <NavLink
+              to={"/students/addStudent"}
+              className="flex flex-col items-center gap-1 border-2 border-pink-500 py-1 px-4 rounded-xl hover:bg-pink-500"
+            >
               <MdPersonAddAlt1 className="text-xl" />
               <button className="text-xs font-bold">Add Student</button>
             </NavLink>
           </div>
-          
         </div>
 
         <div className="mt-5 h-[60vh] overflow-y-auto">
