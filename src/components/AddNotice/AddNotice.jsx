@@ -10,7 +10,7 @@ export default function AddNotice() {
   const teachers = useSelector((state) => state.allteachers.teachers); // get all students info
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [noticeBy, setNoticeBy] = useState("");
+  const [noticeBy, setNoticeBy] = useState("Admin");
   const [pdf, setPdf] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errr, setError] = useState(false);
